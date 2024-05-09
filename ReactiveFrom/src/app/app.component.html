@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <header class="jumbotron">
+    <h2>|Reactive Form |</h2>
+   
+  </header>
+  <form [formGroup]="myForm" >
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text"
+    formControlName="name"
+    [class.is-invalid]="name.invalid && (name.dirty || name.touched)"
+    class="form-control" >
+    <section *ngIf="name.invalid && (name.dirty || name.touched)">
+      <small class="text-danger" *ngIf="name.errors?.['required']">Name is Required</small>
+      <small class="text-danger" *ngIf="name.errors?.['pattern']">Name min 3 max 32 char long</small>
+    </section>
+  </div>
+
+  <div class="form-group">
+    <label>Phone:</label>
+    <input type="number"
+    formControlName="phone"
+    [class.is-invalid]="phone.invalid && (phone.dirty || phone.touched)"
+    class="form-control" >
+    <section *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+      <small class="text-danger" *ngIf="phone.errors?.['required']">phone is Required</small>
+    </section>
+  </div>
+
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="email"
+    formControlName="email"
+    class="form-control" >
+  </div>
+ 
+   <fieldset class="border p2" formGroupName="address">
+    <legend class="w auto">Address:</legend>
+     <div class="form-group">
+      <label>State:</label>
+      <input type="text"
+      formControlName="state"
+      class="form-control">
+     </div>
+     <div class="form-group">
+     <label>City:</label>
+     <input type="text"
+     formControlName="city"
+     class="form-control">
+    </div>
+    <div class="form-group">
+    <label>Pincode:</label>
+    <input type="number"
+    formControlName="pincode"
+    class="form-control">
+    </div>
+
+   </fieldset>
+   <!-- <details>
+    <summary>ReadMOre</summary>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus reiciendis autem magnam veritatis nobis consequuntur incidunt dolore accusantium ut eligendi iusto facilis unde quam, cupiditate repellat voluptate rerum, iste non.
+   </details> -->
+
+  <div class="form-group">
+    <label>Password:</label>
+    <input type="password"
+    formControlName="pas1"
+    class="form-control" >
+  </div>
+
+  <div class="form-group">
+    <label>Confirm Password:</label>
+    <input type="password"
+    formControlName="pas2"
+    class="form-control" >
+  </div>
+  <div class="form-group">
+    <button class="btn btn-sm btn-outline-success" (click)="submit()">Submit</button>
+  </div>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <p><input type="number" id = "AgeTocheck" value="30"></p>
+        <p><button onclick="myFunction()">Test</button></p>
+        <p id = "filter"></p>
+        <script>
+            const ages = [32 ,33 , 37, 40];
+             function checkAge(ages){
+               return ages > document.getElementById("AgeTocheck").value;
+             }
+             function myFunction(){
+                document.getElementById("filter").innerHTML = ages.filter(checkAge);
+             }
+        </script>
+    </body>
+</html>

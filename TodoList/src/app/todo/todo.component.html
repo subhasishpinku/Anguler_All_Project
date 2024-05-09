@@ -1,0 +1,47 @@
+<header class="jumbotron">
+    <h1 align="center">
+         FoodList-2023
+    </h1>
+</header>
+
+    <article>
+        <section style="text-align: justify;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident officia qui aperiam enim harum facilis quia officiis dignissimos numquam? Repellat dolores quibusdam iure minus corporis iste vel commodi dolore? Ipsum!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est adipisci, assumenda sint quibusdam expedita beatae voluptatibus mollitia sunt, velit non alias fugiat dolores, quo facere. Impedit laudantium atque aliquid libero.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla atque, reiciendis ullam eaque eum maiores quis fuga molestiae repellendus. Maxime culpa reprehenderit perspiciatis placeat aliquid consequuntur tempora laudantium assumenda recusandae.
+
+        </section>
+    </article>
+
+<div class="row">
+    <div class="col-lg-7">
+   <header>
+    <h2>All Food </h2>
+   </header>
+   <section  class="form-group">
+   <!-- value: {{searchedTodo}} -->
+    <input class="form-control" type="text" [(ngModel)]="searchItem" placeholder="Searched Todos........">
+   </section>
+   <table class="table table-hover table-bordered">
+    <tr>
+        <th>Food Name</th>
+        <th>Food Desc </th>
+        <th>Food Price</th>
+        <th>Food Image</th>
+    </tr>
+    <tr *ngFor="let todo of uList |Filter :searchItem | paginate:{
+                                     itemsPerPage:4,
+                                     currentPage:startPage,
+                                     totalItems:totalTodos }">
+        <td>{{todo.food_name}}</td>
+        <td>{{todo.food_desc}}</td>
+        <td>{{todo.food_price}}</td>
+        <td><img src={{todo.food_image}} alt=""  height="100" width="100"></td>
+
+    </tr>
+   </table>
+   <pagination-controls (pageChange)="startPage = $event"></pagination-controls>
+
+    </div>
+     
+</div>

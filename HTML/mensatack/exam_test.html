@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <p title="I am tooltip"; style="color:red;";>This is wew site</p>
+    </head>
+    <style>
+         body{
+        background-color: lightblue;
+    }
+    h1{ color:brown;
+        text-align: center;
+    }
+    p{ color:blue; font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;}
+    #paragraph1{ color:green; font-size: 40px; text-align: center; font-family:Arial, Helvetica, sans-serif}
+
+    .center{
+        text-align: center;
+        color:green;
+    }
+    /* *{
+        text-align: center;
+        color: green
+    } */
+    </style>
+   
+    <body>
+        <h1 class="center">Red and center-aligned heading</h1>
+        <p id="paragraph1">My Web Site</p>
+        <table border="4">
+            <tr>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Roll</th>
+            </tr>
+            <tr>
+                <td>Subhasish</td>
+                <td>12</td>
+                <td>12345</td>
+            </tr>
+        </table>
+        <table border="4">
+            <tr>
+                <th>Name</th>
+                <th colspan="2">Class</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Class</td>
+                <td>Roll</td>
+            </tr>
+        </table>
+        <table border="4">
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+            </tr>
+            <tr>
+                <td rowspan="2">phone</td>
+                <td>1234</td>
+            </tr>
+            <tr>
+                <td>12345-6789</td>
+            </tr>
+        </table>
+        <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+        <ol>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ol>
+        <dl>
+            <dt>coffield</dt>
+            <dd>black hot drink</dd>
+        </dl>
+        <form action="html2.html" method="post">
+            <input type="text" name="fname" required>
+            <input type="submit" name="Submit">
+        </form>
+        <p>Choose your favorite Web language:</p>
+        <form>
+          <input type="radio" id="html" name="fav_language" value="HTML">
+          <label for="html">HTML</label><br>
+          <input type="radio" id="css" name="fav_language" value="CSS">
+          <label for="css">CSS</label><br>
+          <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+          <label for="javascript">JavaScript</label>
+        </form>
+        <form>
+            <input type="radio" id="html" name="language" value="HTML">
+            <label for="html">HTML</label><br>
+            <input type="checkbox" id="javascript" name="javascript" value="JAVASCRIPT">
+            <label for="javascript">JavaScript</label>
+        </form> 
+        <label for="car" >Choose option</label>
+        <select id="car" name="Car" size="4" multiple>
+            <option value="valo">Valo</option>
+            <option value="valo1">Valo1</option>
+            <option value="valo2">Valo2</option>
+
+        </select>
+        <br>
+        <textarea id="message" name="message" rows="10" cols="30" margin=left>
+
+        </textarea>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<h1>Angular Data Binding[Property Binding] </h1>
+<h2 [innerHTML]="name"></h2>
+<p [innerHTML]="name"></p>
+
+<input type="text" [value]="name">
+
+<h1>String interpolation</h1>
+<h2>{{name}}</h2>
+<p>{{name}}</p>
+<input type="text" value="{{name}}">
+
+<h1>Difference between Property Binding & String Interpolation </h1>
+<button [disabled]="Value">Property Binding </button>
+<button disabled="{{Value}}"> String Interpolation</button>
+
+<h1> Does't support JS Globla Object</h1>
+<p> Current Url: {{currentUrl}}</p>
+
+<h1>Anguler Event Binding</h1>
+<input type="text" name="n1" id="n11" #t1>
+<button  (click)="OnClick(t1)">Click Me</button>
+
+
+<div class="conatainer">
+    <header class="modal-header">
+        <h1>Anguler 2way data Binding</h1>
+    </header>
+    <form>
+       <div class="form-group">
+        <label>Name: </label>
+        <input class = "form-control" type="text" [(ngModel)]="userInfo.names" name="names" id="t1">
+       </div>
+       <div class="form-group">
+        <label>Email: </label>
+         <input class = "form-control" type="email" [(ngModel)]="userInfo.email" name="email" id="t2">
+       </div>
+       <div class="form-group">
+        <label>Phone: </label>
+         <input class = "form-control" type="number" [(ngModel)]="userInfo.phone" name="phone" id="t3">
+       </div>
+    </form>
+    <table class = "table table-hover table-bordered">
+        <tr>
+            <th>
+                Name:
+            </th>
+            <th>
+                Email:
+            </th>
+            <th>
+                Phone:
+            </th>
+        </tr>
+       <tr>
+        <td>{{userInfo.names}}</td>
+        <td>{{userInfo.email}}</td>
+        <td>{{userInfo.phone}}</td>
+       </tr>
+    </table>
+</div>
+
+<!-- Name: {{names}} Email: {{email}} Phone: {{phone}}; -->
+<!-- Name: {{userInfo.names}} Email: {{userInfo.email}} Phone: {{userInfo.phone}}; -->

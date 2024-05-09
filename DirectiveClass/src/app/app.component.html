@@ -1,0 +1,82 @@
+<div class="conatainer-fluid">
+<div class="row">
+  <div class="col-lg-6">
+    <header class="modal-header">
+      <h1>|Food Items|</h1>
+    </header>
+    <ul class="list-group">
+    <!-- <ul class="list-group" *ngFor="let f of foodItems;
+    let i=index"> -->
+      <!-- <li class="list-group-item"
+      [ngStyle]="i%2==0 ? {'background-color':'red'}:{'background-color':'green'}"
+      >{{f.food}}
+        <span class="bage bage-pills badge-danger float-right">&#8377;{{f.price}}</span>
+
+      </li> process 2: using class: [class]-->
+      <!-- <li class="list-group-item"
+      [ngClass]="i%2==0 ? 'x' : 'y'"
+      >{{f.food}}
+        <span class="bage bage-pills badge-danger float-right">&#8377;{{f.price}}</span>
+
+      </li> Process 3:Adding Bootstrap-->
+
+      <!-- <li class="list-group-item"
+      [ngClass]="i%2==0 ? 'list-group-item-success' : 'list-group-item-danger'"
+      >{{f.food}}
+        <span class="bage bage-pills badge-danger float-right">&#8377;{{f.price}}</span>
+      </li> process 4: using [class.className] -->
+     <ng-container *ngIf="searchFoodList.length!=0 then s else e"></ng-container>
+     <ng-template #s>
+      <li class="list-group-item" *ngFor="let f of searchFoodList;
+      let i=index"
+      [class.x]="i%2==0"
+      [class.y]="i%2!==0"
+      [class.text-white]="true"
+      (click)="onSelect(f)"
+
+      >{{f.food}}
+        <span class="bage bage-pills badge-danger float-right">&#8377;{{f.price}}</span>
+      </li>
+     </ng-template>
+     <ng-template #e>
+      <li class="list-group-item" *ngFor="let f of foodItems;
+      let i=index"
+      [class.x]="i%2==0"
+      [class.y]="i%2!==0"
+      [class.text-white]="true"
+      
+      >{{f.food}}
+        <span class="bage bage-pills badge-danger float-right">&#8377;{{f.price}}</span>
+      </li>
+     </ng-template>
+
+     
+    </ul>
+    <section class="form-group">
+   <input type="text" class="form-control" placeholder="Search........" #t1 (keyup)="onSearch(t1)">
+    </section>
+  </div>
+  <div class="col-lg-6 border-left" *ngIf="selectedFoodItem!=0">
+
+  <!-- <div class="col-lg-6"> -->
+    <header class="modal-header">
+      <h1>|Food Details:{{selectedFoodItem.food}}</h1>
+    </header>
+    <table class="table table-hover table-bordered">
+      <tr>
+        <th>Food:</th>
+        <td>{{selectedFoodItem.food}}</td>
+      </tr>
+      <tr>
+        <th>Price:</th>
+        <td>{{selectedFoodItem.price}}</td>
+      </tr>
+      <tr>
+        <th>Image:</th>
+        <td> <img [src]="selectedFoodItem.img"  alt="" title="foodImage" style="height: 50px; width: 50px;"> </td>
+      </tr>
+    </table>
+  </div>
+ 
+</div>
+</div>

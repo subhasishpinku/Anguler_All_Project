@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <header class="jumbotron">
+    <h1>| Food List |</h1>
+  </header>
+  <nav class="navbar navbar-light bg-dark">
+    <section class="form-group form-inline" style="background-color: aquamarine">
+     <input type="form-control" type="search" placeholder="Search" [(ngModel)]="searchItem">
+     <h2>{{searchItem}}</h2>
+
+    </section>
+  </nav>
+  <table class="table table-hover table-bordered">
+  <tr>
+    <th>Id</th>
+  <th>Food Name</th>
+  <th>Desc</th>
+  <th>price</th>
+  <th>Image</th>
+  </tr>
+  <tr *ngFor="let u of uList |filter:searchItem  | paginate: { itemsPerPage: 10, currentPage:page}">
+    <td>{{u._id}}</td>
+  <td>{{u.food_name}}</td>
+  <td>{{u.desc}}</td>
+  <td>{{u.price}}</td>
+  <td><img src={{u.food_image}} alt=""  height="100" width="100"></td>
+  </tr>
+  </table>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>

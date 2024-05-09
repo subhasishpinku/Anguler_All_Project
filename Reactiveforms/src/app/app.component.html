@@ -1,0 +1,65 @@
+<div class="container">
+  <header class="modal-header">
+ <h2>| TDF |</h2>
+  </header>
+  Model Value : {{myForm|json}}<br>
+  Form Value : {{myForm|json}}
+  <div class="container-fluid">
+  <form #userData="ngForm">
+  <div class="from-group">
+    <label>Name:</label>
+    <input type="text" class="form-control"
+    [(ngModel)]="myForm.name"
+    name="n1"
+    #name="ngModel"
+    [(ngModel)]="myForm.name"
+    [class.is-invalid]="name.touched && name.invalid"
+    pattern ="[a-zA-Z][a-zA-Z ]+"
+    placeholder="Enter Your Name" required>
+    <section *ngIf="name.touched && name.invalid">
+      <small class="text-danger" *ngIf="name.errors?.['required']">name is required</small>
+      <small class="text-danger" *ngIf="name.errors?.['pattern']">name is required</small>
+
+    </section>
+  </div>
+  <div class="from-group">
+    <label>Email:</label>
+    <input type="email" class="form-control" 
+    name="e1"
+    #name="ngModel"
+    [(ngModel)]="myForm.email"  
+    placeholder="Enter Your Email" required>
+  </div>
+  <div class="from-group">
+    <label>Phone:</label>
+    <input type="number" class="form-control" 
+    name="p1"
+    #name="ngModel"
+    [(ngModel)]="myForm.phone"
+    placeholder="Enter Your Ph.No" required>
+  </div>
+
+ 
+  <div class="from-group">
+    <label>Password:</label>
+    <input type="password" class="form-control"
+    name="pas1"
+    #name="ngModel"
+    [(ngModel)]="myForm.pass1"
+    placeholder="Enter Your Password" required>
+  </div>
+
+  <div class="from-group">
+    <label>Confrom Password:</label>
+    <input type="password" class="form-control"
+    name="pas2"
+    #name="ngModel"
+    [(ngModel)]="myForm.pass2"
+     placeholder="Enter Your Confrom" required>
+  </div>
+  <!-- <button clas++++s="btn btn-sm btn-outline-success" (click)="submit()">Submit</button> -->
+
+   <button class="btn btn-sm btn-outline-success" (click)="submit(userData)">Submit</button>
+  </form>
+  </div>
+</div>

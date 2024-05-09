@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Date Time Programing</title>
+    </head>
+    <body>
+    <p id="date-time"></p>
+    <script>
+        const time = new Date().getHours();
+        print(time);
+        let greeting;
+        if(time<10){
+            greeting = "Good Morning";
+        }
+        else if(time<20){
+            greeting = "Good day";
+        }else{
+            greeting = "Good evening";
+        }
+        document.getElementById("date-time").innerHTML = greeting
+    </script>
+    </body>
+</html>

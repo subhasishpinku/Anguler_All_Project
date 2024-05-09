@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <p id="map"></p>
+        <script>
+            const furits = new Map(
+                [
+                    ["apple","200"],
+                    ["orange","300"],
+                    ["bannana","400"],
+                    ["lemon","500"],
+                ]
+            );
+            document.getElementById("map").innerHTML = furits.get("apple");
+        </script>
+    </body>
+</html>

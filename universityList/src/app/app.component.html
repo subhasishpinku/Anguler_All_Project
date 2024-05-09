@@ -1,0 +1,38 @@
+<div class="container-fluid">
+<header class="jumbotron">
+  <h1>| Unversity List |</h1>
+</header>
+<div class="container">
+  <section>
+    <label for="state"><h3>Short By State: &nbsp;</h3></label>
+    <select class="custom-select" name="state" id="state"
+    (click) = "short(sl)" #sl>
+  <option value="">Choose...</option>
+  <option *ngFor="let u of sList">
+   {{u}}
+  </option>
+  </select> 
+  </section>
+</div>
+<table class="table table-hover table-bordered">
+<tr>
+<th>Unversity</th>
+<th>State</th>
+<th>Web</th>
+</tr>
+<tr *ngFor="let u of uList | short : shortValue | paginate: { itemsPerPage: 10, currentPage:page} 
+let i = index" [ngClass]="[ChangeColor(i)]">
+<td>{{u.name}}</td>
+<td>{{u['state-province']}}</td>
+<!-- <td>
+  <ul *ngFor="let w of u.web_pages">
+    <li>{{w}}</li>
+  </ul>
+</td> -->
+<td>
+ <a [href] = 'u.web_pages'>{{u.web_pages}}</a>
+</td>
+</tr>
+</table>
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

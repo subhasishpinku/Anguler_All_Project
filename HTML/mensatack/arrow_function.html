@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h2>JavaScript Arrow Functions</h2>
+        <p>With arrow functions, you don't have to type the function keyword,
+        the return keyword, and the curly brackets.</p>
+        <p>Arrow functions are not supported in IE11 or earlier.</p>
+       <p id="arrow_functions"></p>
+           <script>
+        //    const x = (x, y) => x * y;
+        const x = (x, y) => { return x * y };
+           document.getElementById("arrow_functions").innerHTML = x(5,5);
+           </script>
+    </body>
+</html>

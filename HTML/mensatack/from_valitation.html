@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Verification of valid Password</title>
+    </head>
+    <body>
+        <center>
+            <h1 style='color: green;'>Javascript</h1>
+            <form onsubmit="return validate()">
+                <td>Enter password</td>
+                <input type="password" id="pswd" value="">
+                <span id="message" style="color:red"></span><br><br>
+                <input type="submit" value="Submit">
+
+            </form>
+        </center>
+    </body>
+    <script>
+        function validate(){
+            var pw = document.getElementById("pswd").value;
+            if(pw=="")
+            {
+            document.getElementById("message").innerHTML = "**Fill the password please!";
+            return false;
+            }
+          
+         if(pw.length>15){
+        document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+        return false;
+        }else{
+        alert("Password is correct");
+        }
+        }
+    </script>
+</html>

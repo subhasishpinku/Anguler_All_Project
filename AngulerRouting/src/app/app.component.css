@@ -1,0 +1,11 @@
+nav>a{
+    background-color: aquamarine;
+    text-align: center;
+    padding: 12px 12px;
+}
+nav{
+    text-align: center;
+}
+section{
+    text-align: justify;
+}

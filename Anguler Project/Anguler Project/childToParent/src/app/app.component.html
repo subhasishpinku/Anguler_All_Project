@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="container-fluid"> 
+    <div class="cotainer">
+     <header class="jumbotron">
+      <h1 align="center">Child To Parent [Comm/Inter]</h1>
+     </header>
+      <div class="row">
+        <div class="col-lg-6 border-right">
+          <header class="modal-header">
+            <h1>| Parent Compo |</h1>
+          </header>
+          <div>
+            <h3>Value from child-compo: {{ChildData.m11}} & {{ChildData.m22}}</h3>
+          </div>
+          <!-- <article>
+            <section>
+              
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum enim assumenda consectetur voluptatum velit distinctio provident ducimus vitae. Quod vel nobis nemo alias illum placeat iste voluptatem officia velit maiores.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ex, possimus vel alias porro officiis necessitatibus tenetur ipsam eos quaerat repellat sed deserunt quisquam temporibus minima optio. Unde, in aliquam.
+            </section>
+          </article> -->
+          
+          <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" type="text" name="name" id="n" #n1>
+        </div>
+       
+        <div class="form-group">
+        <label>Email:</label>
+        <input class="form-control" type="email" name="email" id="e" #e1>
+        </div>
+        
+        <button class="btn btn-sm btn-success" (click)="OnSendAgain(n1,e1)">SEND</button>
+
+        </div>
+        <div class="col-lg-6">
+          <app-child-compo [ParentData]="message" (ChildEvent)="ChildData=$event"></app-child-compo>
+        
+        </div>
+          </div>
+    </div>   
+      </div>
+    
