@@ -8,7 +8,7 @@ export class FoodlistApiService {
   constructor(private http:HttpClient) {}
     
     getInfo(){
-      return this.http.get('https://rest-food-api.glitch.me/api/foods')
+      return this.http.get('https://rest-food-api.glitch.me/api/foods')  
     }
    
 

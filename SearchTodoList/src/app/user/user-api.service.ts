@@ -9,7 +9,8 @@ export class UserApiService {
   constructor(private http:HttpClient) { }
 
   signUP(userData:any){
-    return this.http.post('https://foodmaster.glitch.me/api/user/signup',userData);
+    return this.http.post('https://foodmaster.glitch.me/api/user/signup', userData);
+    
   }
 
   logIn(userData:any){

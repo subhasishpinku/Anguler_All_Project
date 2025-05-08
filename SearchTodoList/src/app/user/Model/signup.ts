@@ -1,7 +1,8 @@
 export class UserSignUP{
     constructor(
-     public uname:string,
-     public email:string,
-     public pass1:string
+     public name:string,
+        public email: string,
+        public phone:string, 
+        public pass1:string
     ){}
 }

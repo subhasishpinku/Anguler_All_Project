@@ -13,19 +13,25 @@ export class UserComponent implements OnInit {
   public newUser:any=[];
   public loginUser:any=[];
   constructor(private uservice:UserApiService, private route:Router) {
-    this.newUser=new UserSignUP('','','');
+    this.newUser=new UserSignUP('','','','');
     this.loginUser=new UserLogin('','','');
    }
 
   ngOnInit(): void {
   }
-  onSignUp(){
+  onSignUp() {
     console.log(this.newUser);
-    this.uservice.signUP(this.newUser).subscribe((res:any)=>{
-      console.log(res);
-      alert(res.message);
-    });
-  }
+    this.uservice.signUP(this.newUser).subscribe(
+        (res: any) => {
+            console.log(res);
+            alert(res.message); // Displays "Sign Up successfully..!"
+        },
+        (err) => {
+            console.error('Error:', err);
+            alert('Sign up failed. Please try again.');
+        }
+    );
+}
   onLogin(){
     console.log(this.loginUser);
     let loginData={
